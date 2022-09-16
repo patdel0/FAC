@@ -10,7 +10,7 @@ test('home route returns expected page', async () => {
   assert.equal(response.status, 200)
 
   const body = await response.text()
-  assert.equal(body, 'hello')
+  assert.equal(/hello/i.test(body), true)
 })
 
 test('uh-oh page returns status 500', async () => {
