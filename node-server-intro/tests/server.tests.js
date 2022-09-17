@@ -34,3 +34,14 @@ test("/search returns message including keyword", async () => {
   const body = await response.text();
   assert.match(body, /You searched for bananas/);
 });
+
+test("missing route returns 404 page", async () => {
+  const app = server.listen(1989);
+  const response = await fetch("http:localhost:1989/asdfasd");
+  app.close();
+
+  assert.equal(response.status, 404);
+
+  const body = await response.text();
+  assert.match(body, /not found/i);
+});
