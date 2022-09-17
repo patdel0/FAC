@@ -15,7 +15,7 @@ test("home route / returns expected page", async () => {
 
 test("/uh-oh page returns status 500", async () => {
   const app = server.listen(1989);
-  const response = await fetch("http:localhost:1989/uh-oh");
+  const response = await fetch("http://localhost:1989/uh-oh");
   app.close();
 
   assert.equal(response.status, 500);
@@ -26,7 +26,7 @@ test("/uh-oh page returns status 500", async () => {
 
 test("/search returns message including keyword", async () => {
   const app = server.listen(1989);
-  const response = await fetch("http:localhost:1989/search?keyword=bananas");
+  const response = await fetch("http://localhost:1989/search?keyword=bananas");
   app.close();
 
   assert.equal(response.status, 200);
@@ -37,11 +37,23 @@ test("/search returns message including keyword", async () => {
 
 test("missing route returns 404 page", async () => {
   const app = server.listen(1989);
-  const response = await fetch("http:localhost:1989/asdfasd");
+  const response = await fetch("http://localhost:1989/asdfasd");
   app.close();
 
   assert.equal(response.status, 404);
 
   const body = await response.text();
   assert.match(body, /not found/i);
+});
+
+test("/submit route responds to POST requests", async () => {
+  const app = server.listen(1989);
+  const response = await fetch("http://localhost:1989/submit", {
+    method: "POST",
+  });
+  app.close();
+
+  assert.equal(response.status, 200);
+  const body = await response.text();
+  assert.match(body, /thanks for submitting/);
 });
