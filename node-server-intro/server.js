@@ -2,6 +2,9 @@ const express = require("express");
 
 const server = express();
 
+const staticHandler = express.static("public");
+server.use(staticHandler);
+
 server.get("/", (request, response) => {
   const year = new Date().getFullYear();
   response.send(`
@@ -10,6 +13,7 @@ server.get("/", (request, response) => {
       <head>
         <meta charset="utf-8">
         <title>Home</title>
+        <link rel='stylesheet' href='/style.css'>
       </head>
       <body>
         <h1>Hello, it's ${year}</h1>
