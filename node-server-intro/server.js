@@ -2,9 +2,23 @@ const express = require("express");
 
 const server = express();
 
+// USE
 const staticHandler = express.static("public");
 server.use(staticHandler);
 
+// POST
+const bodyParser = express.urlencoded();
+server.post("/submit", bodyParser, (request, response) => {
+  const name = request.body.name;
+  response.redirect(`/submit/success?name=${name}`);
+});
+
+server.get("/submit/success", (request, response) => {
+  const name = request.query.name;
+  response.send(`<p>Thanks for submitting, ${name}</p>`);
+});
+
+// GET
 server.get("/", (request, response) => {
   const year = new Date().getFullYear();
   response.send(`
@@ -27,10 +41,6 @@ server.get("/search", (request, response) => {
   response.send(`<p>You searched for ${keyword}</p>`);
 });
 
-server.post("/submit", (request, response) => {
-  response.send("thanks for submitting");
-});
-
 server.get("/uh-oh", (request, response) => {
   response.status(500).send("something went wrong");
 });
@@ -40,6 +50,7 @@ server.get("/users/:name", (request, response) => {
   response.send(`<h1>Hello ${name}</h1>`);
 });
 
+// ERROR
 server.use((request, response) => {
   response.status(404).send("<h1>Not found</h1>");
 });
