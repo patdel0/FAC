@@ -40,8 +40,12 @@ The issue was ocurring because createTasks wasn't being initialized/imported in 
 
 ### Solution
 
-Either import createTasks after db has been exported in `db.js` or change the node command to run `node model/tasks.js`.
-
+Do one of these:
+    
+- Import createTasks after db has been exported in `db.js`
+- Change the node command to run `node model/tasks.js`.
+- Create an `index.js` file in the root folder with the following code and run `node index.js`
+    
 ```js
 //index.js
 const db = require('./database/db.js')
