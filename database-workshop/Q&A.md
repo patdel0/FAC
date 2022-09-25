@@ -22,6 +22,7 @@ const { readFileSync } = require('node:fs')
 
   </details>
 
+
 ## Issues
 
 <details>
@@ -39,7 +40,7 @@ The issue was ocurring because createTasks wasn't being initialized/imported in 
 
 ### Solution
 
-Either import createTasks after db has been exported, create an `index.js` file or change the node command to run `node model/tasks.js`.
+Either import createTasks after db has been exported in `db.js` or change the node command to run `node model/tasks.js`.
 
 ```js
 //index.js
@@ -58,7 +59,7 @@ createTasks was being imported and initialized before the db creation in `db.js`
 
 ### Solution
 
-Either import createTasks after db has been exported, create an `index.js` file or change the node command to run `node model/tasks.js`.
+Either import createTasks after db has been exported in `db.js` or change the node command to run `node model/tasks.js`.
 
 </details
 
