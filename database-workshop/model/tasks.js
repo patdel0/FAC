@@ -1,9 +1,22 @@
 const db = require('../database/db.js')
 
-const insert_task = db.prepare('INSERT INTO tasks (content) VALUES (?)')
+const insert_task = db.prepare(/*sql*/`
+  INSERT INTO tasks (content, complete)
+  VALUES ($content, $complete)
+  RETURNING id, content, created_at
+`);
 
-function createTask(content) {
-  insert_task.run(content)
+const select_tasks = db.prepare(/*sql*/ `
+  SELECT id, content, created_at, complete FROM tasks
+`);
+
+function createTask(task) {
+  return insert_task.get(task);
 }
 
-module.exports = { createTask }
+function listTasks() {
+  return select_tasks.all();
+}
+
+
+module.exports = { createTask, listTasks }

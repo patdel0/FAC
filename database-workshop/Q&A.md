@@ -60,7 +60,40 @@ createTasks was being imported and initialized before the db creation in `db.js`
 
 Either import createTasks after db has been exported, create an `index.js` file or change the node command to run `node model/tasks.js`.
 
-</details
+</details>
+
+<details>
+  <summary>listTasks() is displaying an empty array</summary>
+
+### Explanation
+
+When running the `seed.js` file, we are creating a file named 'db.sqlite'. However when running the function provided `listTasks()` an empty array is returned.
+
+This is due to the fact that when we run `node database/db.js` or `node model/tasks.js`, we are not providing the DB_FILE name before execution.
+
+### Solution
+
+Provide the database file name before executing the node command:
+`DB_FILE=db.sqlite node database/db.js`
+or
+`DB_FILE=db.sqlite node model/tasks.js`, depending on which file you are writing the execution code.
+
+You can also create a script in your `package.json` file to make it easier to run next time:
+
+```json
+// package.json
+{
+  "dependencies": {
+    "better-sqlite3": "^7.6.2"
+  },
+  "scripts": {
+    "seed": "DB_FILE=db.sqlite node database/seed.js",
+    "start": "DB_FILE=db.sqlite node index.js"
+  }
+}
+```
+
+</details>
 
 <!-- TEMPLATE -->
 <!--
