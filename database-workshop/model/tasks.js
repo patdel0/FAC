@@ -7,7 +7,12 @@ const insert_task = db.prepare(/*sql*/`
 `);
 
 const select_tasks = db.prepare(/*sql*/ `
-  SELECT id, content, created_at, complete FROM tasks
+  SELECT
+    id,
+    content,
+    TIME(created_at),
+    complete
+  FROM tasks
 `);
 
 function createTask(task) {
