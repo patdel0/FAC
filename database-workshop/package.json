@@ -4,6 +4,7 @@
   },
   "scripts": {
     "seed": "DB_FILE=db.sqlite node database/seed.js",
-    "start": "DB_FILE=db.sqlite node index.js"
+    "start": "DB_FILE=db.sqlite node index.js",
+    "test": "DB_FILE=test.sqlite node -r ./database/seed.js test/tasks.test.js"
   }
 }
