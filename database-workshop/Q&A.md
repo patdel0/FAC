@@ -39,7 +39,11 @@ The issue was ocurring because createTasks wasn't being initialized/imported in 
 
 ### Solution
 
-Either import createTasks after db has been exported, create an `index.js` file or change the node command to run `node model/tasks.js`.
+Do one of these:
+
+- Import createTasks after db has been exported in `db.js`
+- Change the node command to run `node model/tasks.js`.
+- Create an `index.js` file in the root folder with the following code and run `node index.js`
 
 ```js
 //index.js
@@ -58,7 +62,17 @@ createTasks was being imported and initialized before the db creation in `db.js`
 
 ### Solution
 
-Either import createTasks after db has been exported, create an `index.js` file or change the node command to run `node model/tasks.js`.
+Do one of these:
+
+- Import createTasks after db has been exported in `db.js`
+- Change the node command to run `node model/tasks.js`.
+- Create an `index.js` file in the root folder with the following code and run `node index.js`
+
+```js
+//index.js
+const db = require('./database/db.js')
+const { createTask } = require('./model/tasks.js')
+```
 
 </details>
 
@@ -88,10 +102,12 @@ You can also create a script in your `package.json` file to make it easier to ru
   },
   "scripts": {
     "seed": "DB_FILE=db.sqlite node database/seed.js",
-    "start": "DB_FILE=db.sqlite node index.js"
+    "start": "DB_FILE=db.sqlite node model/tasks.js"
   }
 }
 ```
+
+Now `npm start` can be used to run the file you chose
 
 </details>
 
