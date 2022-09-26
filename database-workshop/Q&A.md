@@ -22,6 +22,20 @@ const { readFileSync } = require('node:fs')
 
   </details>
 
+<details >
+    <summary>sqlite_sequence?</summary>
+
+```js
+function reset() {
+  db.exec(/*sql*/ `
+    DELETE FROM tasks;
+    DELETE FROM sqlite_sequence WHERE name='tasks';
+  `)
+}
+```
+
+</details>
+
 ## Issues
 
 <details>
@@ -108,6 +122,25 @@ You can also create a script in your `package.json` file to make it easier to ru
 ```
 
 Now `npm start` can be used to run the file you chose
+
+</details>
+
+<details>
+  <summary>Test - model.removeTask is not a function</summary>
+
+### Explanation
+
+The test is expecting `removeTask()` to be returned from the `tasks.js` file.
+
+### Solution
+
+Export all functions expected in the test from `tasks.js` by adding this snippet to the bottom of the file:
+
+```js
+// tasks.js
+...
+module.exports = { createTask, removeTask, listTasks, editTask };
+```
 
 </details>
 
