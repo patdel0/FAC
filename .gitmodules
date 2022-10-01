@@ -1,0 +1,3 @@
+[submodule "auth-challenge"]
+	path = auth-challenge
+	url = https://github.com/patdel0/auth-challenge.git

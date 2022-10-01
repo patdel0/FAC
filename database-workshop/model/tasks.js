@@ -1,4 +1,5 @@
 const db = require('../database/db.js')
+const server = require('../server.js')
 
 // Create
 const insert_task = db.prepare(/*sql*/ `
@@ -10,6 +11,8 @@ const insert_task = db.prepare(/*sql*/ `
 function createTask(task) {
   return insert_task.get(task)
 }
+
+server.post('/',)
 
 // Select
 const select_tasks = db.prepare(/*sql*/ `
