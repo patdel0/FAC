@@ -1,8 +1,8 @@
 const projects = [
   {
     name: "Tribute Page",
-    liveDemo: "https://dogwishx.github.io/FAC/tribute-page/index.html",
-    sourceCode: "https://github.com/DogwishX/FAC/tree/main/tribute-page",
+    liveDemo: "https://patdel0.github.io/FAC/tribute-page/index.html",
+    sourceCode: "https://github.com/patdel0/FAC/tree/main/tribute-page",
     subSection: "FAC",
     img: "./media/hokusai.png",
     description: `Made in honor of Hokusai, a prominent japanese artist of the Edo period. A sticky point with this project was creating a nav menu, without the use of Javascript`,
@@ -10,8 +10,8 @@ const projects = [
   },
   {
     name: "Functions",
-    liveDemo: "https://dogwishx.github.io/FAC/functions/index.html",
-    sourceCode: "https://github.com/DogwishX/FAC/tree/main/functions",
+    liveDemo: "https://patdel0.github.io/FAC/functions/index.html",
+    sourceCode: "https://github.com/patdel0/FAC/tree/main/functions",
     subSection: "FAC",
     img: "./media/functions.png",
     description:
@@ -20,8 +20,8 @@ const projects = [
   },
   {
     name: "DOM Manipulation",
-    liveDemo: "https://dogwishx.github.io/FAC/dom-manipulation/index.html",
-    sourceCode: "https://github.com/DogwishX/FAC/tree/main/dom-manipulation",
+    liveDemo: "https://patdel0.github.io/FAC/dom-manipulation/index.html",
+    sourceCode: "https://github.com/patdel0/FAC/tree/main/dom-manipulation",
     subSection: "FAC",
     img: "./media/codename-validator.png",
     description:
@@ -30,8 +30,8 @@ const projects = [
   },
   {
     name: "Array Methods",
-    liveDemo: "https://dogwishx.github.io/FAC/array-methods/index.html",
-    sourceCode: "https://github.com/DogwishX/FAC/tree/main/array-methods",
+    liveDemo: "https://patdel0.github.io/FAC/array-methods/index.html",
+    sourceCode: "https://github.com/patdel0/FAC/tree/main/array-methods",
     subSection: "FAC",
     img: "./media/array-methods.png",
     description: `This project makes use of basic DOM manipulation - triggered by click and hover events - to run array methods.`,
@@ -39,8 +39,8 @@ const projects = [
   },
   {
     name: "Flexbox Gallery",
-    liveDemo: "https://dogwishx.github.io/FAC/flexbox-gallery/index.html",
-    sourceCode: "https://github.com/DogwishX/FAC/tree/main/flexbox-gallery",
+    liveDemo: "https://patdel0.github.io/FAC/flexbox-gallery/index.html",
+    sourceCode: "https://github.com/patdel0/FAC/tree/main/flexbox-gallery",
     subSection: "FAC",
     img: "./media/flexbox-gallery.png",
     description: `A minimal product page for a fictional shop, created specifically to demonstrate the use of <span class='code'>display: flex</span> and <span class='code'>flex-wrap</span>. All images were taken from <a href='https://unsplash.com/'>Unsplash</a>.`,
@@ -48,8 +48,8 @@ const projects = [
   },
   {
     name: "Application Website",
-    liveDemo: "https://dogwishx.github.io/FAC/application-website/index.html",
-    sourceCode: "https://github.com/DogwishX/FAC/tree/main/application-website",
+    liveDemo: "https://patdel0.github.io/FAC/application-website/index.html",
+    sourceCode: "https://github.com/patdel0/FAC/tree/main/application-website",
     subSection: "FAC",
     img: "./media/application-website.png",
     description: `Despite its simplicity, this was the most challenging to build. The canvas generating spheres varying in speed, size and direction proved to be harder than initially thought.`,
@@ -57,8 +57,8 @@ const projects = [
   },
   {
     name: "Objects",
-    liveDemo: "https://github.com/DogwishX/FAC/tree/main/objects/index.js",
-    sourceCode: "https://github.com/DogwishX/FAC/tree/main/objects/index.js",
+    liveDemo: "https://github.com/patdel0/FAC/tree/main/objects/index.js",
+    sourceCode: "https://github.com/patdel0/FAC/tree/main/objects/index.js",
     subSection: "FAC",
     img: "./media/objects.png",
     description: `Prompt related to object manipulation. This file includes te following functions: capitalizeKeys(), stringToObject(), shoppingList() and mapObject()`,
@@ -67,9 +67,9 @@ const projects = [
   {
     name: "Feature",
     liveDemo:
-      "https://dogwishx.github.io/FAC/application-website/index.html#bored",
+      "https://patdel0.github.io/FAC/application-website/index.html#bored",
     sourceCode:
-      "https://github.com/DogwishX/FAC/tree/main/application-website/scripts/Game.js",
+      "https://github.com/patdel0/FAC/tree/main/application-website/scripts/Game.js",
     subSection: "FAC",
     img: "./media/feature.png",
     description:
